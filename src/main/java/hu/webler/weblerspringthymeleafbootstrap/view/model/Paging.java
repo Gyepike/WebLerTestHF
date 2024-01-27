@@ -45,7 +45,7 @@ public class Paging {
         return paging;
     }
 
-    private void addPageItems(int from, int to, int pageNumber) {
+    public void addPageItems(int from, int to, int pageNumber) {
         for (int i = from; i < to; i++) {
             items.add(PageItem.builder()
                     .isActive(pageNumber != i)
@@ -55,7 +55,7 @@ public class Paging {
         }
     }
 
-    private void last(int pagesSize) {
+    public void last(int pagesSize) {
         items.add(PageItem.builder()
                 .isActive(false)
                 .pageItemType(PageItemType.DOTS)
@@ -68,7 +68,7 @@ public class Paging {
                 .build());
     }
 
-    private void first(int pageNumber) {
+    public void first(int pageNumber) {
         items.add(PageItem.builder()
                 .isActive(pageNumber != 1)
                 .index(1)
