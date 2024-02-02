@@ -7,6 +7,7 @@ import hu.webler.weblerspringthymeleafbootstrap.view.model.Paged;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,12 +17,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@DisplayName("Unit test of StudentService")
+@DisplayName("Unit test of EmployeeService")
 public class EmployeeServiceTest {
 
     private DataLoader loaderLoader;
 
-    //private EmployeeServiceImpl employeesService;
+
+    private EmployeeServiceImpl employeesService;
 
     @BeforeEach
     void setUp() {
@@ -33,7 +35,7 @@ public class EmployeeServiceTest {
 
 
     @Test()
-    @DisplayName("Test getStudents() method")
+    @DisplayName("Test getEmployees() method")
     void testGetStudents_shouldReturnNonEmptyListOfEmployees() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
 
         // Arrange

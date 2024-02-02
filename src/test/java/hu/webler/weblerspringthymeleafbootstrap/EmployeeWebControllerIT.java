@@ -5,17 +5,22 @@ import hu.webler.weblerspringthymeleafbootstrap.controller.EmployeeController;
 import hu.webler.weblerspringthymeleafbootstrap.model.Employee;
 import hu.webler.weblerspringthymeleafbootstrap.service.EmployeeServiceImpl;
 import hu.webler.weblerspringthymeleafbootstrap.view.model.Paged;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -28,24 +33,24 @@ public class EmployeeWebControllerIT {
     @Autowired
     private MockMvc mockMvc;
 
-    private DataLoader loaderLoader;
 
-
-
-    @Autowired
+    @MockBean
     private EmployeeServiceImpl employeesService;
 
 
 
-    /*
-    @Test
-    @DisplayName("Integration test of StudentWebController - Thymeleaf - to return all students")
-    void testThymeleaf_shouldReturnAllStudents2() throws Exception {
 
+    @Test
+    @DisplayName("Integration test of EmployeesController to return all students")
+    void shouldReturnAllEmployees() throws Exception {
 
     }
 
- */
+    @BeforeEach
+    void setUp() {
+
+
+    }
 
 
     private Paged<Employee> createTestList() {
