@@ -22,13 +22,13 @@ public class EmployeeServiceTest {
     private DataLoader loaderLoader;
 
 
-    private EmployeeServiceImpl employeesService;
+    //private EmployeeServiceImpl employeesService;
 
     @BeforeEach
     void setUp() {
 
         loaderLoader = mock(DataLoader.class);
-        employeesService = new EmployeeServiceImpl(loaderLoader);
+     //   employeesService = new EmployeeServiceImpl(loaderLoader);
 
     }
 
@@ -69,8 +69,7 @@ public class EmployeeServiceTest {
                 // Add more employees as needed
         );
 
-        Paged<Employee> pagedEmployee = new Paged<>(employeeList, 0, 1);
 
-        return pagedEmployee;
+        return  new Paged<>(employeeList, 0, 1);
     }
 }
