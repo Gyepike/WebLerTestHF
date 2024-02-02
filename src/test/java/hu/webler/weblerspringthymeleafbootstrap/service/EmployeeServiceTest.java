@@ -37,7 +37,7 @@ public class EmployeeServiceTest {
 
         // Arrange
         Paged<Employee> mockEmployees = createTestList();
-
+        Employee emp1 = new Employee("Gyepi", "Position1", "Bp", null, 1200);
 
         when(loaderLoader.getEmployees(0)).thenReturn(mockEmployees);
 
@@ -48,8 +48,6 @@ public class EmployeeServiceTest {
         // Assert
         assertNotNull(employees);
         assertEquals(2, employees.getContents().size());
-
-        Employee emp1 = new Employee("Gyepi", "Position1", "Bp", null, 1200);
         assertEquals(emp1, employees.getContents().get(1));
 
     }
@@ -64,16 +62,12 @@ public class EmployeeServiceTest {
 
         // Act
         Paged<Employee> employees = loaderLoader.getEmployees(0);
-
+        Employee emp2 = employees.getContents().get(1);
+        emp2.setStartDate(null);
 
         // Assert
         assertNotNull(employees);
         assertEquals(10, employees.getContents().size());
-
-
-        Employee emp2 = employees.getContents().get(1);
-        emp2.setStartDate(null);
-
         assertEquals(emp1, emp2);
 
     }

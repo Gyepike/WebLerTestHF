@@ -28,7 +28,7 @@ public class EmployeeTest {
         assertEquals(expected, actual, "Expecting 0 because the last name are the same!"); // Expecting 0 because last names are the same
         assertNotEquals(1, emp1.compareTo(emp2)); // Expecting 0 because last names are the same
         assertTrue(isTrue);
-        System.out.println("Employee Test");
+
     }
 
 
