@@ -32,8 +32,8 @@ public class EmployeeServiceTest {
 
 
     @Test()
-    @DisplayName("Test getEmployees() method")
-    void testGetStudents_shouldReturnNonEmptyListOfEmployees() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
+    @DisplayName("Test getEmployees() method with Mock")
+    void testGetEmployees_shouldReturnNonEmptyListOfEmployees() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
 
         // Arrange
         Paged<Employee> mockEmployees = createTestList();
@@ -55,6 +55,33 @@ public class EmployeeServiceTest {
         assertEquals(emp1, employees.getContents().get(1));
 
     }
+
+
+    @Test()
+    @DisplayName("Test getEmployees() method with no Mock")
+    void testGetEmployees_shouldReturnNonEmptyListOfEmployeesWithOutMock() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
+
+        // Arrange
+        Paged<Employee> mockEmployees = createTestList();
+
+
+        when(loaderLoader.getEmployees(0)).thenReturn(mockEmployees);
+
+        // Act
+        Paged<Employee> employees = loaderLoader.getEmployees(0);
+
+        // Tested if Data present
+        // System.out.println("Total Elements: " + employees.getContents());
+
+        // Assert
+        assertNotNull(employees);
+        assertEquals(2, employees.getContents().size());
+
+        Employee emp1 = new Employee("Gyepi", "Position1", "Bp", null, 1200);
+        assertEquals(emp1, employees.getContents().get(1));
+
+    }
+
 
 
     private Paged<Employee> createTestList() {
