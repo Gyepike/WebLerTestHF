@@ -21,14 +21,13 @@ public class EmployeeServiceTest {
 
     private DataLoader loaderLoader;
 
-
     //private EmployeeServiceImpl employeesService;
 
     @BeforeEach
     void setUp() {
 
         loaderLoader = mock(DataLoader.class);
-     //  employeesService = new EmployeeServiceImpl(loaderLoader);
+        //  employeesService = new EmployeeServiceImpl(loaderLoader);
 
     }
 
@@ -41,24 +40,22 @@ public class EmployeeServiceTest {
         Paged<Employee> mockEmployees = createTestList();
 
 
-
         when(loaderLoader.getEmployees(0)).thenReturn(mockEmployees);
 
         // Act
-        Paged<Employee>  employees = loaderLoader.getEmployees(0);
+        Paged<Employee> employees = loaderLoader.getEmployees(0);
 
         // Tested if Data present
-        System.out.println("Total Elements: " + employees.getContents());
+        // System.out.println("Total Elements: " + employees.getContents());
 
         // Assert
         assertNotNull(employees);
         assertEquals(2, employees.getContents().size());
 
-        Employee emp1 =   new Employee("Gyepi", "Position1", "Bp", null, 1200);
+        Employee emp1 = new Employee("Gyepi", "Position1", "Bp", null, 1200);
         assertEquals(emp1, employees.getContents().get(1));
 
     }
-
 
 
     private Paged<Employee> createTestList() {
@@ -70,6 +67,6 @@ public class EmployeeServiceTest {
         );
 
 
-        return  new Paged<>(employeeList, 0, 1);
+        return new Paged<>(employeeList, 0, 1);
     }
 }
