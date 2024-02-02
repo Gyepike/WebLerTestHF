@@ -7,7 +7,7 @@ import hu.webler.weblerspringthymeleafbootstrap.view.model.Paged;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,13 +23,12 @@ public class EmployeeServiceTest {
     private DataLoader loaderLoader;
 
 
-    private EmployeeServiceImpl employeesService;
+
 
     @BeforeEach
     void setUp() {
 
         loaderLoader = mock(DataLoader.class);
-        //  employeesService = new EmployeeServiceImpl(loaderLoader);
 
     }
 
