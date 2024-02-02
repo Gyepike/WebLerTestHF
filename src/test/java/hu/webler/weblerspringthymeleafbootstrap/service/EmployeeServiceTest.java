@@ -35,7 +35,7 @@ public class EmployeeServiceTest {
 
     @Test()
     @DisplayName("Test getStudents() method")
-    void testGetStudents_shouldReturnNonEmptyListOfStudents() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
+    void testGetStudents_shouldReturnNonEmptyListOfEmployees() { // naming convention: testMethodName_StateUnderTest_ExpectedBehavior instead of this: void testGetStudents()
 
         // Arrange
         Paged<Employee> mockEmployees = createTestList();
