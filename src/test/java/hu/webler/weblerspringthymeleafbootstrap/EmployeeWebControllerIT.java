@@ -11,9 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 
-
-
-
 @WebMvcTest(EmployeeController.class)
 @DisplayName("Integration test of EmployeeControler - gyepi")
 public class EmployeeWebControllerIT {
@@ -27,18 +24,15 @@ public class EmployeeWebControllerIT {
     private EmployeeServiceImpl employeesService;
 
 
-
-
     @Test
     @DisplayName("Integration test of EmployeesController to return all students")
-    void shouldReturnAllEmployees() throws Exception {
+    void shouldReturnAllEmployees() {
         //TODO
     }
 
     @BeforeEach
     void setUp() {
-
-
+        //TODO
     }
 
 

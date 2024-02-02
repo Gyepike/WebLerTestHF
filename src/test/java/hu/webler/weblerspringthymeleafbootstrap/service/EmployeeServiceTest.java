@@ -23,8 +23,6 @@ public class EmployeeServiceTest {
     private DataLoader loaderLoader;
 
 
-
-
     @BeforeEach
     void setUp() {
 
@@ -61,12 +59,9 @@ public class EmployeeServiceTest {
 
     private Paged<Employee> createTestList() {
 
-        List<Employee> employeeList = Arrays.asList(
-                new Employee("Gyepi", "Position1", "Bp", null, 1200),
-                new Employee("Gyepi", "Position1", "Bp", null, 1200)
+        List<Employee> employeeList = Arrays.asList(new Employee("Gyepi", "Position1", "Bp", null, 1200), new Employee("Gyepi", "Position1", "Bp", null, 1200)
                 // Add more employees as needed
         );
-
 
         return new Paged<>(employeeList, 0, 1);
     }

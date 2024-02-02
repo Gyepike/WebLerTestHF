@@ -14,10 +14,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final DataLoader dataLoader;
 
-    /*@Override
-    public List<Employee> getAllEmployees() {
-        return dataLoader.getEmployees();
-    }*/
+
 
     @Override
     public Paged<Employee> getAllEmployeesPaginated(int pageNumber) {

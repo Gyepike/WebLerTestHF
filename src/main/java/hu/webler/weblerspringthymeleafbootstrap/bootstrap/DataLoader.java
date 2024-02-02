@@ -21,9 +21,7 @@ public class DataLoader {
         }
     }
 
-    /*public List<Employee> getEmployees() {
-        return this.employees;
-    }*/
+
 
     public Paged<Employee> getEmployees(int page) {
         int startIndex = page * 10;

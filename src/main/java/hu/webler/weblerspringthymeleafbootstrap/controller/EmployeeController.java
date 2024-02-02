@@ -15,11 +15,6 @@ public class EmployeeController {
 
     private final EmployeeServiceImpl employeeServiceImpl;
 
-    /*@GetMapping
-    public String renderEmployees(Model model) {
-        model.addAttribute("employees", employeeServiceImpl.getAllEmployees());
-        return "index";
-    }*/
 
     @GetMapping()
     public String renderEmployeesPaginated(Model model, @RequestParam(defaultValue = "0") int pageNumber) {
